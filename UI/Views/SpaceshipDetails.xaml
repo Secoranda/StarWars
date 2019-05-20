@@ -1,0 +1,25 @@
+﻿<Window x:Class="UI.Views.SpaceshipDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI.Views"
+        mc:Ignorable="d"
+        Title="Spaceship Details" Height="450" Width="800">
+    <Grid>
+        <Label Content="Spaceship Details" HorizontalAlignment="Left" Height="35" Margin="320,50,0,0" VerticalAlignment="Top" Width="290" FontSize="20" FontWeight="Bold"/>
+        <DataGrid Background="AliceBlue" x:Name="Items" Margin="3,105"
+                       IsReadOnly="True" AutoGenerateColumns="False"
+                      ScrollViewer.CanContentScroll="True" Height="188">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name}" Width="*" Header="SpaceshipName"/>
+                <DataGridTextColumn Binding="{Binding Type}" Width="*" Header="Type"/>
+                <DataGridTextColumn  Binding="{Binding Fuselage}" Width="*" Header="Fuselage"/>
+                <DataGridTextColumn  Binding="{Binding Engines}" Width="*" Header="Engine"/>
+                <DataGridTextColumn  Binding="{Binding Avionics}" Width="*" Header="Avionics"/>
+                <DataGridTextColumn  Binding="{Binding Weaponry}" Width="*" Header="Weaponry"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

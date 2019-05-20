@@ -1,0 +1,69 @@
+﻿<Window x:Class="UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Star Wars" Height="450" Width="800">
+
+    <StackPanel Margin="20, 0, 20, 0" CanVerticallyScroll="True" Orientation="Vertical"
+	            CanHorizontallyScroll="False">
+
+        <TextBlock Margin="20, 20, 20, 10" Text="Command Center" TextAlignment="Center" FontSize="30" FontWeight="Bold"></TextBlock>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="0,0,0,-70">
+                <Button Name="CreateSpaceship" Margin="10, 20, 10, 10" Click="CreateSpaceship_OnClick" Width="200" Background="DarkCyan" Foreground="White">
+                    <TextBlock Text="Add Spaceship" FontSize="20"></TextBlock>
+                </Button>
+
+                <ListView Name="SpaceshipsListView" Margin="10" ItemsSource="{Binding Spaceships, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="Name: " />
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                                <TextBlock Text=", " />
+                                <TextBlock Text="Type: " />
+                                <TextBlock Text="{Binding Type}" FontWeight="Bold" />
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Content="Spaceship Status" HorizontalAlignment="Left" Height="25" Margin="88,0,0,0" Width="200" Background="#FFC1D2D6" Click="ButSpace_Click" FontWeight="Bold"/>
+              
+                    <Button Content="Spaceship Details" HorizontalAlignment="Left" Height="25"  Margin="88,0,0,0" Width="200" Background="#FFA1E1F1" Click="SpaceDetails_Click" FontWeight="Bold" Padding="1,1,1,-1" ScrollViewer.CanContentScroll="True"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="0,0,0,40">
+                <Button Name="CreateStormtrooper" Margin="10, 20, 10, 10" Click="CreateStormtrooper_OnClick" Width="200" Background="DarkCyan" Foreground="White">
+                    <TextBlock Text="Add Stormtrooper" FontSize="20"></TextBlock>
+                </Button>
+
+                <ListView Name="StormtroopersListView" Margin="10" ItemsSource="{Binding Stormtroopers}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="Identifier: " />
+                                <TextBlock Text="{Binding Identifier}" FontWeight="Bold" />
+                                <TextBlock Text=", " />
+                                <TextBlock Text="Spaceship: " />
+                                <TextBlock Text="{Binding Spaceship.Name}" FontWeight="Bold" />
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Content="Button" HorizontalAlignment="Left" Height="25" Margin="88,0,0,0" Width="200" Background="#FF90A0A4" Click="ButStrom_Click" FontWeight="Bold"/>
+            </StackPanel>
+
+        </Grid>
+
+
+
+    </StackPanel>
+</Window>

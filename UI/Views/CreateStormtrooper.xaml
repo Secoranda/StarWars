@@ -1,0 +1,32 @@
+﻿<Window x:Class="UI.Views.CreateStormtrooper"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI.Views"
+        mc:Ignorable="d"
+        Title="Create a Stormtrooper" Height="200" Width="400">
+	<StackPanel Margin="20, 0, 20, 0">
+		<Grid Margin="10, 20, 20, 20">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.3*"></ColumnDefinition>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<TextBlock Grid.Column="0" Text="Identifier:"></TextBlock>
+			<TextBox Height="20" Grid.Column="1" Name="StormtrooperIdentifier"></TextBox>
+		</Grid>
+
+		<Grid Margin="10, 20, 20, 20">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.3*"></ColumnDefinition>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<TextBlock Grid.Column="0" Text="Spaceship:"></TextBlock>
+			<ComboBox Grid.Column="1" Name="Spaceships"></ComboBox>
+		</Grid>
+
+		<Button Name="Create" Click="Create_OnClick" Width="150" Background="DarkCyan" Foreground="White">
+			<TextBlock Text="Create" FontSize="15"></TextBlock>
+		</Button>
+	</StackPanel>
+</Window>
