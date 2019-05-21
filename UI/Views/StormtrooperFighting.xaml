@@ -1,0 +1,45 @@
+﻿<Window x:Class="UI.Views.StormtrooperFighting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI.Views"
+        mc:Ignorable="d"
+        Title="StormtrooperFighting" Height="377" Width="514">
+    <Grid Margin="0,0,2,4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="77*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="240*"></RowDefinition>
+            <RowDefinition Height="55*"></RowDefinition>
+            <RowDefinition Height="47*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="20,20,20,0" Height="155" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ListView Grid.Column="0" Name="Stormtroopers" Margin="0,0,0,-60"></ListView>
+            <ListView Grid.Column="1" Name="ActionsListView" Margin="0,0,0,-60"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="20,10,20,9" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="5, 0, 5, 0" Name="MeleeAttack" Content="Melee Attack" Click="MeleeAttack_OnClick" Grid.RowSpan="2" Background="#FF976666" FontWeight="Bold"></Button>
+            <Button Grid.Column="1" Margin="5, 0, 5, 0" Name="RangeAttack" Content="Range Attack" Click="RangeAttack_OnClick" Grid.RowSpan="2" Background="Silver" FontWeight="Bold"></Button>
+            <Button Grid.Column="2" Margin="5, 0, 5, 0" Name="SpecialAttack" Content="Special Attack" Click="SpecialAttack_OnClick" Grid.RowSpan="2" Background="#FFF9E268" FontWeight="Bold"></Button>
+        </Grid>
+        <Button Grid.ColumnSpan="2" Content="Retreat" HorizontalAlignment="Left" Height="35" Margin="180,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="140" Click="Retreat_Click" Background="AliceBlue" FontWeight="Bold"/>
+    </Grid>
+</Window>

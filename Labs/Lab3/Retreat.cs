@@ -9,12 +9,12 @@
 			statusObserver = new StatusObserver();
 		}
 
-		protected abstract void RetreatParty();
+		protected abstract string RetreatParty();
 
-		public void Retreat()
+		public string Retreat()
 		{
-			RetreatParty();
 			statusObserver.Update(Status.Retreating);
+			return RetreatParty();
 		}
 	}
 }

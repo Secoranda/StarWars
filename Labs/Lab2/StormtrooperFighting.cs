@@ -1,23 +1,21 @@
-﻿using System;
-
-namespace Labs
+﻿namespace Labs
 {
 	public partial interface IStormtrooper
 	{
-		void Fight(IStormtrooperFighting fighting);
+		string Fight(IStormtrooperFighting fighting);
 	}
 
 	public partial class Stormtrooper
 	{
-		public void Fight(IStormtrooperFighting fighting)
+		public string Fight(IStormtrooperFighting fighting)
 		{
-			fighting.Fight();
+			return fighting.Fight();
 		}
 	}
 
 	public interface IStormtrooperFighting
 	{
-		void Fight();
+		string Fight();
 	}
 
 	public class StormtrooperFighting : IStormtrooperFighting
@@ -29,35 +27,35 @@ namespace Labs
 			this.weapon = weapon;
 		}
 
-		public void Fight()
+		public string Fight()
 		{
-			weapon.Shoot();
+			return weapon.Shoot();
 		}
 	}
 
 	public interface IRangeWeapon
 	{
-		void Shoot();
+		string Shoot();
 	}
 
 	public class RangeWeapon : IRangeWeapon
 	{
-		public void Shoot()
+		public string Shoot()
 		{
-			Console.WriteLine("Shots fired. All missed.");
+			return "Shots fired. All missed.";
 		}
 	}
 
 	public interface IMeleeWeapon
 	{
-		void Cut();
+		string Cut();
 	}
 
 	public class MeleeWeapon : IMeleeWeapon
 	{
-		public void Cut()
+		public string Cut()
 		{
-			Console.WriteLine("Cuts through flesh. Misses.");
+			return "Cuts through flesh. Misses.";
 		}
 	}
 
@@ -70,9 +68,9 @@ namespace Labs
 			meleeWeapon = melee;
 		}
 
-		public void Shoot()
+		public string Shoot()
 		{
-			meleeWeapon.Cut();
+			return meleeWeapon.Cut();
 		}
 	}
 
@@ -85,10 +83,9 @@ namespace Labs
 			_fighting = fighting;
 		}
 
-		public void Fight()
+		public string Fight()
 		{
-			Console.WriteLine("Special Attack. Combo x20 missed.");
-			_fighting.Fight();
+			return "Special Attack. Combo x20 missed.\n" + _fighting.Fight();
 		}
 	}
 }

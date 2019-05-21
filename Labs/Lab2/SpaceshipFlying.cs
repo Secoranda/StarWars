@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace Labs
+﻿namespace Labs
 {
 	public partial class Spaceship
 	{
-		public void Fly()
+		public string Fly()
 		{
-			Console.WriteLine($"{Name} is departing in 3. 2. 1. Go.");
+			return $"{Name} is departing in 3. 2. 1. Go.";
 		}
 	}
 
@@ -21,7 +19,7 @@ namespace Labs
 
 		public void StartFlight(bool access)
 		{
-			FlightProxy proxy = new FlightProxy(access);
+			var proxy = new FlightProxy(access);
 			proxy.StartFlight(_spaceship);
 		}
 	}
@@ -35,12 +33,9 @@ namespace Labs
 			_access = access;
 		}
 
-		public void StartFlight(Spaceship spaceship)
+		public string StartFlight(Spaceship spaceship)
 		{
-			if (_access)
-				spaceship.Fly();
-			else
-				Console.WriteLine($"{spaceship.Name} is not allowed to depart.");
+			return _access ? spaceship.Fly() : $"{spaceship.Name} is not allowed to depart.";
 		}
 	}
 }

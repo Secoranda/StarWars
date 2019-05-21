@@ -2,6 +2,8 @@
 {
 	public partial interface IStormtrooper
 	{
+		string Identifier { get; }
+		Spaceship Spaceship { get; }
 		IStormtrooper Clone();
 	}
 

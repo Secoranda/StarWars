@@ -74,12 +74,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModels\WarCheckViewModel.cs" />
     <Compile Include="Views\SpaceshipDetails.xaml.cs">
       <DependentUpon>SpaceshipDetails.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WarResult.xaml.cs">
-      <DependentUpon>WarResult.xaml</DependentUpon>
+    <Compile Include="Views\StormtrooperFighting.xaml.cs">
+      <DependentUpon>StormtrooperFighting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WarCheck.xaml.cs">
       <DependentUpon>WarCheck.xaml</DependentUpon>
@@ -115,7 +114,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WarResult.xaml">
+    <Page Include="Views\StormtrooperFighting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

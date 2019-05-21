@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace Labs
+﻿namespace Labs
 {
 	public partial class Spaceship : ARetreat
 	{
-		protected override void RetreatParty()
+		protected override string RetreatParty()
 		{
-			Console.WriteLine($"{Name} is retreating from the battlefield.");
+			return $"{Name} is retreating from the battlefield.";
 		}
 	}
 }

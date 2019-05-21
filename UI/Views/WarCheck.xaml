@@ -5,19 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI.Views"
         mc:Ignorable="d"
-        Title="WarCheck" Height="267" Width="409">
-    <Grid Margin="0,0,27,19">
+        Title="WarCheck" Height="292" Width="519">
+    <Grid Margin="10,10,0,4">
         <Grid.RowDefinitions>
             <RowDefinition Height="115*"/>
             <RowDefinition Height="122*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Allowed to depart" HorizontalAlignment="Left" Height="25" Margin="40,55,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label Content="Not allowed to depart" HorizontalAlignment="Left" Margin="240,54,0,0" VerticalAlignment="Top" Width="150"/>
-        <Label Content="Spaceship STATUS" HorizontalAlignment="Left" Height="40" Margin="99,14,0,0" VerticalAlignment="Top" Width="265" FontSize="22" FontWeight="Bold"/>
-        <ListBox Name="Allow" HorizontalAlignment="Left" Height="100" Margin="40,85,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="100" Background="#FF9CE89C"/>
-        <ListBox Name="NAllow" HorizontalAlignment="Left" Height="100" Margin="240,85,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="100" Background="#FFEA9C98"/>
-        <Button Content="Depart" HorizontalAlignment="Left" Margin="140,85,0,0" Grid.Row="1" Width="100" Click="Depart_Click"/>
+        <Label Content="Allowed to depart" HorizontalAlignment="Left" Height="25" Margin="10,59,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Not allowed to depart" HorizontalAlignment="Left" Margin="370,58,-19,0" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Spaceship STATUS" HorizontalAlignment="Left" Height="40" Margin="150,20,0,0" VerticalAlignment="Top" Width="200" FontSize="22" FontWeight="Bold"/>
+        <ListBox Name="Allow" HorizontalAlignment="Left" Height="100" Margin="10,85,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="100" Background="#FF9CE89C"/>
+        <ListBox Name="NAllow" HorizontalAlignment="Left" Height="100" Margin="380,85,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="100" Background="#FFEA9C98"/>
+        <ListBox Name="Middle" HorizontalAlignment="Left" Height="100" Margin="115,85,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="265"/>
+        <Button Content="Depart" HorizontalAlignment="Left" Margin="115,75,0,0" Grid.Row="1" Width="100" Click="Depart_Click" Height="24" VerticalAlignment="Top" Background="#FFB2D5D6"/>
+        <Button Content="Retreat" HorizontalAlignment="Left" Height="26" Margin="283,73,0,0" Grid.Row="1" VerticalAlignment="Top" Width="97" RenderTransformOrigin="0.5,0.5" Click="Retreat_Click" Background="#FFB0CBCD"/>
 
     </Grid>
 </Window>

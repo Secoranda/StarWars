@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,7 @@ namespace UI
 		private CreateStormtrooper _createStormtrooperWindow;
         private WarCheck _seeTechDetails;
         private SpaceshipDetails _seeSpaceSDetails;
+       
 
         public MainWindow()
 		{
@@ -66,26 +68,23 @@ namespace UI
 					.Spaceships.FirstOrDefault(x => x.Name == stSp));
 			((MainWindowViewModel)DataContext).Stormtroopers.Add(newStormtrooper);
 		}
-        private void Create(object sender, EventArgs e)
-        {
-            
-        }
-        //lucreaza
+
         private void ButSpace_Click(object sender, RoutedEventArgs e)
         {
             _seeTechDetails = new WarCheck();         
             _seeTechDetails.Show();
         }
-     //lucreaza
+
         private void SpaceDetails_Click(object sender, RoutedEventArgs e)
         {
             _seeSpaceSDetails = new SpaceshipDetails();
             _seeSpaceSDetails.Show();
         }
-        //asta inca nu am facut....
-        private void ButStrom_Click(object sender, RoutedEventArgs e)
+
+        private void StormtrooperFighting_Click(object sender, RoutedEventArgs e)
         {
-          
+			var fighting = new Views.StormtrooperFighting();
+			fighting.Show();
         }
        
     }
